@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joberfaring</title>
+    <link rel="stylesheet" href="Styles/opret2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="panel">
+            <div class="panel-header">
+                <h1 class="panel-header-title">Udfyld Erhvervserfaring
+                    <h1 />
+            </div>
+
+            <form class="form" action="javascript:void(0);">
+
+                <div class="input">
+                    <input placeholder="Jobtitel" id="u-navn" type="text" class="input-field" />
+                </div>
+                <div class="input">
+                    <input placeholder="Virksomhed/organisation" id="u-sted" type="text" class="input-field" />
+                </div>
+
+                <div class="input">
+                    <label class="input-label">Job beskrivelse</label>
+                    <input id="name" type="text" class="name" maxlength="100"/>
+                </div>
+
+               
+                <!-- Tilføj Button -->
+                <button id="btn" class="btn"><i class="fa fa-plus"></i> Tilføj Nyt Job</button>
+
+                <!-- Videre Button -->
+                <button id="btn2" class="btn2" href="upload.html"><i "></i> Videre</button>
+
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $("#name").replaceWith('<textarea id="name" class="name" maxlength="235"></textarea>');
+    </script>
+
+
+    <script>
+        var xx = ".js-hiddenform"
+        $('#btn').click(function() {
+            $(xx).slideDown();
+            xx = xx + 2;
+
+            if(xx.length > 16) {
+                alert("Maks 3 uddanelser kan tilføjes")
+            }
+        });
+    
+    </script>
+
+
+
+</body>
+
+
+
+</html>

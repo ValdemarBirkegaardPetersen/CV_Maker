@@ -9,10 +9,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
 </head>
 
 <body>
+
+
 
     <div class="container">
         <div class="panel">
@@ -23,7 +24,7 @@
             <form class="form" action="javascript:void(0);">
                 <div class="input">
                     <label class="input-label">Fortæl lidt om dig selv (maks 500 tegn)</label>
-                    <input id="name" type="name" class="name" />
+                    <input id="name" type="text" class="name" maxlength="100"/>
                 </div>
                 <div class="input">
                     <label class="input-label">Uddanelser</label>
@@ -53,8 +54,9 @@
         </div>
     </div>
 
+
     <script>
-        $("#name").replaceWith('<textarea id="name" class="name"></textarea>');
+        $("#name").replaceWith('<textarea id="name" class="name" maxlength="50"></textarea>');
     </script>
 
     <script>
