@@ -303,3 +303,20 @@ input:focus::placeholder {
   a {
       text-align: center;
   }
+
+  #u-navn {
+      margin-top: 25px;
+  }
+
+  .line-6 {
+    height: 5px;
+    background: linear-gradient(
+      to bottom,
+      transparent 2px,
+      black 2px,
+      black 3px,
+      transparent 3px
+    );
+    margin-top: 55px;
+
+  }
