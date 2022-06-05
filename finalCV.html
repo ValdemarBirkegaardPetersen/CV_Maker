@@ -211,71 +211,219 @@
         doc.setFontSize(12);
         doc.setTextColor(40,40,40);
 
-        //section 1
+        //Om mig
+        var sectionHeight = 50;
         doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.setFontSize(16);
-        doc.text(10,50,'Om mig');
+        doc.text(10,sectionHeight,'Om mig');
+        sectionHeight += 3;
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        doc.rect(10, 53, 120, 0.5, 'F')
+        doc.rect(10, sectionHeight, 120, 0.5, 'F')
+        sectionHeight += 7;
 
         doc.setTextColor(40,40,40);
         doc.setFontSize(12);
         doc.setFontStyle('normal');
-        var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 125);
-        doc.text(10, 60, splitTitle);
+        var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 120);
+        doc.text(10, sectionHeight, splitTitle);
+        sectionHeight += 5+(5*splitTitle.length);
 
-        //section 2
+        //Uddannelser
         doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.setFontSize(16);
-        doc.text(10,110,'Uddannelser');
+        doc.text(10,sectionHeight,'Uddannelser');
+        sectionHeight += 3;
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        doc.rect(10, 113, 120, 0.5, 'F')
+        doc.rect(10, sectionHeight, 120, 0.5, 'F')
+        sectionHeight += 7;
 
         doc.setTextColor(40,40,40);
-        doc.setFontSize(12);
+        doc.setFontSize(13);
         doc.setFontStyle('normal');
-        var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 125);
-        doc.text(10, 120, splitTitle);
+        //var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 125);
+        //doc.text(10, sectionHeight, splitTitle);
+        //sectionHeight += 5+(5*splitTitle.length);
+        var eduStart1 = '2010';
+        var eduEnd1 = '2013';
+        var eduName1 = 'Uddannelsesnavn1'
+        var eduLoc1 = 'Lokation1'
+        
+        if(eduName1 != null){
+            doc.setFontSize(11);
+            doc.setFontStyle('bold');
+            doc.text(10, sectionHeight, eduStart1+'-');
+            doc.text(10, sectionHeight+5, eduEnd1);
+            doc.setFontSize(13);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(eduName1+' - '+eduLoc1, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 8+(5*splitTitle.length);
+        }
 
-        //section 3
+        var eduStart2 = '2013';
+        var eduEnd2 = '2016';
+        var eduName2 = 'Uddannelsesnavn2';
+        var eduLoc2 = 'Lokation2';
+        
+        if(eduName2 != null){
+            doc.setFontSize(11);
+            doc.setFontStyle('bold');
+            doc.text(10, sectionHeight, eduStart2+'-');
+            doc.text(10, sectionHeight+5, eduEnd2);
+            doc.setFontSize(13);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(eduName2+' - '+eduLoc2, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 8+(5*splitTitle.length);
+        }
+
+        var eduStart3 = '2016';
+        var eduEnd3 = '2018';
+        var eduName3 = 'Uddannelsesnavn3';
+        var eduLoc3 = 'Lokation3';
+        
+        if(eduName3 != null){
+            doc.setFontSize(11);
+            doc.setFontStyle('bold');
+            doc.text(10, sectionHeight, eduStart3+'-');
+            doc.text(10, sectionHeight+5, eduEnd3);
+            doc.setFontSize(13);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(eduName3+' - '+eduLoc3, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 8+(5*splitTitle.length);
+        }
+
+        sectionHeight += 2;
+
+        //Erhvervserfaring
         doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.setFontSize(16);
-        doc.text(10,170,'Erhvervserfaring');
+        doc.text(10,sectionHeight,'Erhvervserfaring');
+        sectionHeight += 3;
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        doc.rect(10, 173, 120, 0.5, 'F')
+        doc.rect(10, sectionHeight, 120, 0.5, 'F')
+        sectionHeight += 7;
 
         doc.setTextColor(40,40,40);
-        doc.setFontSize(12);
+        doc.setFontSize(13);
         doc.setFontStyle('normal');
-        var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 125);
-        doc.text(10, 180, splitTitle);
+        //var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 125);
+        //doc.text(10, sectionHeight, splitTitle);
+        //sectionHeight += 5+(5*splitTitle.length);
+        var workStart1 = '2010';
+        var workEnd1 = '2013';
+        var workName1 = 'Arbejdstitel1'
+        var workLoc1 = 'Arbejdssted1'
+        var workDesc1 = 'Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio'
+        
+        if(workName1 != null){
+            doc.setFontSize(11);
+            doc.setFontStyle('bold');
+            doc.text(10, sectionHeight, workStart1+'-');
+            doc.text(10, sectionHeight+5, workEnd1);
+            doc.setFontSize(13);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(workName1+' - '+workLoc1, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 1+(5*splitTitle.length);
 
-        //section 4
-        doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        doc.setFontSize(16);
-        doc.text(10,230,'Færdigheder');
-        doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        doc.rect(10, 233, 120, 0.5, 'F')
+            doc.setFontSize(11);
+            var splitTitle = doc.splitTextToSize(workDesc1, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 4*splitTitle.length;
+            sectionHeight += 5;
+            doc.setFontSize(13);
+        }
 
-        doc.setTextColor(40,40,40);
-        doc.setFontSize(12);
-        doc.setFontStyle('normal');
-        var splitTitle = doc.splitTextToSize('Færdighed1, Færdighed2, Færdighed3 & Færdighed4', 125);
-        doc.text(10, 240, splitTitle);
+        var workStart2 = '2013';
+        var workEnd2 = '2016';
+        var workName2 = 'Arbejdstitel2';
+        var workLoc2 = 'Arbejdssted2';
+        var workDesc2 = 'Finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.';
+        
+        if(workName2 != null){
+            doc.setFontSize(11);
+            doc.setFontStyle('bold');
+            doc.text(10, sectionHeight, workStart2+'-');
+            doc.text(10, sectionHeight+5, workEnd2);
+            doc.setFontSize(13);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(workName2+' - '+workLoc2, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 1+(5*splitTitle.length);
 
-        //section 5
-        doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        doc.setFontSize(16);
-        doc.text(10,260,'Certifikater');
-        doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        doc.rect(10, 263, 120, 0.5, 'F')
+            doc.setFontSize(11);
+            var splitTitle = doc.splitTextToSize(workDesc2, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 4*splitTitle.length;
+            sectionHeight += 5;
+            doc.setFontSize(13);
+        }
 
-        doc.setTextColor(40,40,40);
-        doc.setFontSize(12);
-        doc.setFontStyle('normal');
-        var splitTitle = doc.splitTextToSize('Certifikat1 & Certifikat2', 125);
-        doc.text(10, 270, splitTitle);
+        var workStart3 = '2016';
+        var workEnd3 = '2018';
+        var workName3 = 'Arbejdstitel3';
+        var workLoc3 = 'Arbejdssted3';
+        var workDesc3 = 'Porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio';
+        
+        if(workName3 != null){
+            doc.setFontSize(11);
+            doc.setFontStyle('bold');
+            doc.text(10, sectionHeight, workStart3+'-');
+            doc.text(10, sectionHeight+5, workEnd3);
+            doc.setFontSize(13);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(workName3+' - '+workLoc3, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 1+(5*splitTitle.length);
 
+            doc.setFontSize(11);
+            var splitTitle = doc.splitTextToSize(workDesc3, 105);
+            doc.text(25, sectionHeight, splitTitle);
+            sectionHeight += 4*splitTitle.length;
+            sectionHeight += 5;
+            doc.setFontSize(13);
+        }
+
+        sectionHeight += 2;
+
+        //Færdigheder
+        var skills = 'Færdighed1, Færdighed2, Færdighed3 & Færdighed4';
+        if(skills != null){ //if certificates is not empty(null)
+            doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
+            doc.setFontSize(16);
+            doc.text(10,sectionHeight,'Færdigheder');
+            sectionHeight += 3;
+            doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
+            doc.rect(10, sectionHeight, 120, 0.5, 'F')
+            sectionHeight += 7;
+
+            doc.setTextColor(40,40,40);
+            doc.setFontSize(12);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(skills, 120);
+            doc.text(10, sectionHeight, splitTitle);
+            sectionHeight += 5+(5*splitTitle.length);
+        }
+        //Certifikater
+        var certificates = 'Certifikat1 & Certifikat2';
+        if(certificates != null){ //if certificates is not empty(null)
+            doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
+            doc.setFontSize(16);
+            doc.text(10,sectionHeight,'Certifikater');
+            sectionHeight += 3;
+            doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
+            doc.rect(10, sectionHeight, 120, 0.5, 'F')
+            sectionHeight += 7;
+
+            doc.setTextColor(40,40,40);
+            doc.setFontSize(12);
+            doc.setFontStyle('normal');
+            var splitTitle = doc.splitTextToSize(certificates, 120);
+            doc.text(10, sectionHeight, splitTitle);
+            sectionHeight += 5+(5*splitTitle.length);
+        }
         //draw right bracket
         doc.setFillColor(rgbColor2[0],rgbColor2[1],rgbColor2[2]);
         doc.rect(140, 0, 70, docHeight, 'F') //rect(x, y, w, h, style)
@@ -304,7 +452,7 @@
         doc.text(147,178,'N/A');
         doc.text(147,198,'Gadenavn 01');
         doc.text(147,218,'0000'+' '+'Bynavn');
-        var splitTitle = doc.splitTextToSize('sprog1, sprog2, & sprog3',60);
+        var splitTitle = doc.splitTextToSize('sprog1, sprog2, sprog3, sprog4, sprog5 & sprog6',60);
         doc.text(147, 238, splitTitle);
 
 
@@ -316,32 +464,19 @@
     
 
         //draw header
+        var fullName = 'Fornavn Mellemnavn Efternavn';
+        var jobTitle = 'Job Titel';
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.rect(0, 0, docWidth, 40, 'F')
         doc.setTextColor(255,255,255);
         doc.setFontSize(36);
-        doc.text(5,25,'Navn Mellemnavn Efternavn   30 33 36 39');
+        doc.text(5,25,fullName);
         doc.setFontSize(22);
-        doc.text(5,35,'Job Titel/Rolle 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60');
-
-        //doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        //doc.rect(0, 0, 220, 50, 'F')
+        doc.text(5,35,jobTitle);
 
 
-        /*
-        doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
-        
-        doc.text(10,10,'hue: '+ document.getElementById('rangeHue').value);
-        doc.text(10,20,'RGB color: '+rgbColor[0]+','+rgbColor[1]+','+rgbColor[2]);
-        doc.text(10,30,'_phone');
-        doc.text(10,40,'_adress');
-        doc.text(10,50,'_postal');
-        doc.text(10,60,'_by');
-        
-        */
 
-        doc.save("test.pdf");
-        //console.log("pdf test 1");
+        doc.save(fullName+" CV.pdf"); //saves as pdf from the browser
     }   
 
     function changeColor(){   
