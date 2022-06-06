@@ -171,6 +171,46 @@
 </body>
 
 <script>
+    // opret1.html
+    var navn = $.sessionStorage('navn');
+    var mail = $.sessionStorage('mail');
+    var phone = $.sessionStorage('phone');
+    var adress = $.sessionStorage('adress');
+    var postal = $.sessionStorage('postal');
+    var by = $.sessionStorage('by');
+
+    // opret2.html
+    var omdig = $.sessionStorage('omdig');
+    var sprog = $.sessionStorage('sprog'); // 
+    var færdigheder = $.sessionStorage('færdigheder'); // 
+    var certifikater = $.sessionStorage('certifikater'); // 
+
+    // opret3.html
+    var udd_navn1 = $.sessionStorage('udd_navn1');
+    var udd_navn2 = $.sessionStorage('udd_navn2');
+    var udd_navn3 = $.sessionStorage('udd_navn3');
+    
+    var udd_sted_navn1 = $.sessionStorage('sted_navn1');
+    var udd_sted_navn2 = $.sessionStorage('sted_navn2');
+    var udd_sted_navn3 = $.sessionStorage('sted_navn3');
+
+
+
+    var udd_start_month1  = $.sessionStorage('s1');
+    var udd_start_year1 = $.sessionStorage('s2');
+    var udd_end_month1 = $.sessionStorage('s3');
+    var udd_end_year1 = $.sessionStorage('s4');
+
+    var udd_start_month2  = $.sessionStorage('d1');
+    var udd_start_year2 = $.sessionStorage('d2');
+    var udd_end_month2 = $.sessionStorage('d3');
+    var udd_end_year2 = $.sessionStorage('d4');
+
+    var udd_start_month3  = $.sessionStorage('g1');
+    var udd_start_year3 = $.sessionStorage('g2');
+    var udd_end_month3 = $.sessionStorage('g3');
+    var udd_end_year3 = $.sessionStorage('g4');
+
     var rgbColor = hslToRgb(0, 0.5, 0.3);
     var rgbColor2 = hslToRgb(0, 0.25, 0.9);
     var croppedImgBase64 = $.sessionStorage('croppedImgBase64'); // Getting image from cache/storage
