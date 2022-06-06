@@ -186,11 +186,11 @@
     var sprog = $.sessionStorage('sprog');
     //var sprog = 'Dansk, Engelsk, Tysk';
     if(sprog != null) { var sprog = sprog.trim().split(/,\s*/); }
-    var skills = $.sessionStorage('færdigheder');
+    var skills = $.sessionStorage('skills');
     //var skills = 'Photoshop, Premiere Pro, Excell, 3DS Max 2022';
     //var skills = null;
     if(skills != null){skills = skills.trim().split(/,\s*/);} 
-    var certs = $.sessionStorage('certifikater'); 
+    var certs = $.sessionStorage('certs'); 
     //var certs = 'Certified Business Relationshop Manager (CBRM), NAND Benifits Account Manager Certification (RAMC)'; 
     if(certs != null){certs = certs.trim().split(/,\s*/);}
 
@@ -269,9 +269,9 @@
     }
     var eduStart3 = $.sessionStorage('g2');
 
-    var eduStartMonth3 = $.sessionStorage('g3');
-    if(parseInt(eduStartMonth3) < 10) {
-        eduStartMonth3 = "0" + eduStartMonth3
+    var eduEndMonth3 = $.sessionStorage('g3');
+    if(parseInt(eduEndMonth3) < 10) {
+        eduEndMonth3 = "0" + eduEndMonth3
     }
     var eduEnd3 = $.sessionStorage('g4');
 
@@ -607,7 +607,7 @@
         sectionHeight += 2;
 
         //Færdigheder
-        if(skills != null){ //if certificates is not empty(null)
+        if(skills != ['']){ //if certificates is not empty(null)
             doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
             doc.setFontSize(16);
             doc.text(10,sectionHeight,'Færdigheder');
@@ -632,8 +632,10 @@
             //sectionHeight += 5+(5*splitTitle.length);
             sectionHeight += 5;
         }
+
+        
         //Certifikater
-        if(certs != null){ //if certificates is not empty(null)
+        if(certs != '' ){ //if certificates is not empty(null)
             doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
             doc.setFontSize(16);
             doc.text(10,sectionHeight,'Certifikater');
@@ -735,7 +737,7 @@
         doc.text(docWidth-68,docHeight-8,'Made with CV Maker')
         doc.text(docWidth-68,docHeight-2,'By V. Birkegaard & S. Olsson')
 
-        doc.save(fullName+" CV.pdf"); //saves as pdf from the browser
+        doc.save(navn+" CV.pdf"); //saves as pdf from the browser
     }   
 
     function changeColor(){   
@@ -763,6 +765,7 @@
         document.getElementById('sectiontitle2').style.color = newColor;
         document.getElementById('sectiontitle3').style.color = newColor;
         document.getElementById('sectiontitle4').style.color = newColor;
+
 
     }
 

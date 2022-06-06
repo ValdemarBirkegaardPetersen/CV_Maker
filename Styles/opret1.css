@@ -172,7 +172,7 @@ a {
     -webkit-transform: rotate(-45deg);
 }
 
-.name {
+.name, #omdig {
     margin-top: .25rem;
     border: 0.0625rem solid #999;
     padding-bottom: 12vmin;
