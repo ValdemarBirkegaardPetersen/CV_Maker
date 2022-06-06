@@ -178,14 +178,14 @@
     var adress = $.sessionStorage('adress');
     var postal = $.sessionStorage('postal');
     var by = $.sessionStorage('by');
-    //var alder = 
+    var alder =  $.sessionStorage('alder');
 
     // opret2.html
     var omdig = $.sessionStorage('omdig');
     //var omdig = 'Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.';
     var sprog = $.sessionStorage('sprog');
     //var sprog = 'Dansk, Engelsk, Tysk';
-    var sprog = sprog.trim().split(/,\s*/);
+    if(sprog != null) { var sprog = sprog.trim().split(/,\s*/); }
     var skills = $.sessionStorage('færdigheder');
     //var skills = 'Photoshop, Premiere Pro, Excell, 3DS Max 2022';
     //var skills = null;
@@ -198,8 +198,17 @@
     //var udd_navn1 = 'test';
     
 
+    
     var eduName1 = $.sessionStorage('udd_navn1');
     var eduLoc1 = $.sessionStorage('sted_navn1');
+
+    var eduName2 = $.sessionStorage('udd_navn2');
+    var eduLoc2 = $.sessionStorage('sted_navn2');
+    
+    var eduName3 = $.sessionStorage('udd_navn3');
+    var eduLoc3 = $.sessionStorage('sted_navn3');
+
+    /*
     var eduStartMonth1  = $.sessionStorage('s1');
     var eduStart1 = $.sessionStorage('s2');
     var eduEndMonth1 = $.sessionStorage('s3');
@@ -207,6 +216,8 @@
 
     var eduName2 = $.sessionStorage('udd_navn2');
     var eduLoc2 = $.sessionStorage('sted_navn2');
+
+
     var eduStartMonth2  = $.sessionStorage('d1');
     var eduStart2 = $.sessionStorage('d2');
     var eduEndMonth2 = $.sessionStorage('d3');
@@ -214,10 +225,114 @@
 
     var eduName3 = $.sessionStorage('udd_navn3');
     var eduLoc3 = $.sessionStorage('sted_navn3');
+
+
     var eduStartMonth3  = $.sessionStorage('g1');
     var eduStart3 = $.sessionStorage('g2');
     var eduEndMonth3 = $.sessionStorage('g3');
     var eduEnd3 = $.sessionStorage('g4');
+    */
+    
+
+
+    var eduStartMonth1  = $.sessionStorage('s1');
+    if(parseInt(eduStartMonth1) < 10) {
+        eduStartMonth1 = "0" + eduStartMonth1
+    }
+    var eduStart1 = $.sessionStorage('s2');
+    var eduEndMonth1 = $.sessionStorage('s3');
+    if(parseInt(eduEndMonth1) < 10) {
+        eduEndMonth1 = "0" + eduEndMonth1
+    }
+    var eduEnd1 = $.sessionStorage('s4');
+
+
+    // ------------------------------------------------------------------------------------------------------------------------------------//
+
+    var eduStartMonth2  = $.sessionStorage('d1');
+    if(parseInt(eduStartMonth2) < 10) {
+        eduStartMonth2 = "0" + eduStartMonth2
+    }
+    var eduStart2 = $.sessionStorage('d2');
+
+    var eduEndMonth2 = $.sessionStorage('d3');
+    if(parseInt(eduEndMonth2) < 10) {
+        eduEndMonth2 = "0" + eduEndMonth2
+    }
+    var eduEnd2 = $.sessionStorage('d4');
+
+    // ------------------------------------------------------------------------------------------------------------------------------------//
+
+    var eduStartMonth3  = $.sessionStorage('g1');
+    if(parseInt(eduStartMonth3) < 10)     {
+        eduStartMonth3 = "0" + eduStartMonth3 
+    }
+    var eduStart3 = $.sessionStorage('g2');
+
+    var eduStartMonth3 = $.sessionStorage('g3');
+    if(parseInt(eduStartMonth3) < 10) {
+        eduStartMonth3 = "0" + eduStartMonth3
+    }
+    var eduEnd3 = $.sessionStorage('g4');
+
+        // ------------------------------------------------------------------------------------------------------------------------------------//
+    // Jobs
+
+    var workName1 = $.sessionStorage('job_navn1');
+    var workName2 = $.sessionStorage('job_navn2');
+    var workName3 = $.sessionStorage('job_navn3');
+    
+    var workLoc1 = $.sessionStorage('job_sted1');
+    var workLoc2 = $.sessionStorage('job_sted2');
+    var workLoc3 = $.sessionStorage('job_sted3');
+
+    var workDesc1 = $.sessionStorage('job_desc1');
+    var workDesc2 = $.sessionStorage('job_desc2');
+    var workDesc3 = $.sessionStorage('job_desc3');
+
+
+
+    var workStartMonth1  = $.sessionStorage('v1');
+    if(parseInt(workStartMonth1) < 10) {
+        workStartMonth1 = "0" + workStartMonth1
+    }
+    var workStart1 = $.sessionStorage('v2');
+    var workEndMonth1 = $.sessionStorage('v3');
+    if(parseInt(workEndMonth1) < 10) {
+        workEndMonth1 = "0" + workEndMonth1
+    }
+    var workEnd1 = $.sessionStorage('v4');
+
+
+    // ------------------------------------------------------------------------------------------------------------------------------------//
+
+    var workStartMonth2  = $.sessionStorage('b1');
+    if(parseInt(workStartMonth2) < 10) {
+        workStartMonth2 = "0" + workStartMonth2
+    }
+    var workStart2 = $.sessionStorage('b2');
+
+    var workEndMonth2 = $.sessionStorage('b3');
+    if(parseInt(workEndMonth2) < 10) {
+        workEndMonth2 = "0" + workEndMonth2
+    }
+    var workEnd2 = $.sessionStorage('b4');
+
+    // ------------------------------------------------------------------------------------------------------------------------------------//
+
+    var workStartMonth3  = $.sessionStorage('n1');
+    if(parseInt(workStartMonth3) < 10)     {
+        workStartMonth3 = "0" + workStartMonth3 
+    }
+    var workStart3 = $.sessionStorage('n2');
+
+    var workStartMonth3 = $.sessionStorage('n3');
+    if(parseInt(workStartMonth3) < 10) {
+        workStartMonth3 = "0" + workStartMonth3
+    }
+    var workEnd3 = $.sessionStorage('n4');
+
+    // ------------------------------------------------------------------------------------------------------------------------------------//
     
 
 

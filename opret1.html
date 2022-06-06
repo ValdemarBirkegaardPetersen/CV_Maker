@@ -7,7 +7,8 @@
     <title>Kontaktoplysninger</title>
     <link rel="stylesheet" href="Styles/opret1.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Libraries/jquery.storage.js"></script>
 
 </head>
 
@@ -23,6 +24,10 @@
                 <div class="input">
                     <label class="input-label">Fulde navn</label>
                     <input id="name" type="name" class="input-field" />
+                </div>
+                <div class="input">
+                    <label class="input-label">Alder</label>
+                    <input id="alder" type="alder" class="input-field" />
                 </div>
                 <div class="input">
                     <label class="input-label">E-mail</label>
@@ -44,8 +49,15 @@
                     <label class="input-label">By</label>
                     <input id="demo" type="by" class="input-field" />
                 </div>
+
+                    <!--
+                         TILFØJ EN ALDERS DROPDOWN MENU
+                    -->
+
                 <div class="input">
                     <a class="input-submit" href="opret2.html" class="button" onclick="myFunction()">Videre</a>
+
+
 
                 </div>
             </form>
@@ -55,6 +67,7 @@
     <script>
         function myFunction() {
             var navn = document.getElementById("name").value;
+            var alder = document.getElementById("alder").value;
             var mail = document.getElementById("mail").value;
             var phone = document.getElementById("phone").value;
             var adress = document.getElementById("adress").value;
@@ -67,6 +80,15 @@
             console.log(adress);
             console.log(postal);
             console.log(by);
+
+            $.sessionStorage('navn', navn);
+            $.sessionStorage('alder', alder);
+            $.sessionStorage('mail', mail);
+            $.sessionStorage('phone', phone);
+            $.sessionStorage('adress', adress);
+            $.sessionStorage('postal', postal);
+            $.sessionStorage('by', by);
+
         }
 
         function demoFromHTML() {
