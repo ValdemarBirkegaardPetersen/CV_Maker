@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <script src="Libraries/jquery.storage.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -28,16 +28,16 @@
             <form class="form" action="javascript:void(0);">
 
                 <div class="input">
-                    <input placeholder="Uddanelsens navn" id="u-navn" type="text" class="input-field" />
+                    <input placeholder="Uddanelsens navn" id="u-navn1" type="text" class="input-field" />
                 </div>
                 <div class="input">
-                    <input placeholder="Uddanelsens sted" id="u-sted" type="text" class="input-field" />
+                    <input placeholder="Uddanelsens sted" id="u-sted1" type="text" class="input-field" />
                 </div>
 
 
                 <div class="form__fields-group col-2">
                     <div class="form-element col-2" name="position-education.items[0].startMonth">
-                        <label class="">Startdato</label><select class="form-select-custom" name="education.items[0].startMonth">
+                        <label class="">Startdato</label><select id="s1" class="form-select-custom" name="education.items[0].startMonth">
                             <option value="">Vis ikke</option>
                             <option value="hidden">Vis kun år</option>
                             <option value="1">januar</option>
@@ -55,7 +55,7 @@
                         </select><i class="form-select-custom--arrow"></i>
                     </div>
                     <div class="form-element col-2" name="position-education.items[0].startYear">
-                        <label class="">&nbsp;</label><select class="form-select-custom form__select-element"
+                        <label class="">&nbsp;</label><select id="s2" class="form-select-custom form__select-element"
                             name="education.items[0].startYear">
                             <option value="2030">2030</option>
                             <option value="2029">2029</option>
@@ -133,7 +133,7 @@
                 </div>
                 <div class="form__fields-group col-2">
                     <div class="form-element col-2" name="position-education.items[0].startMonth">
-                        <label class="">Slutdato &nbsp</label><select class="form-select-custom" name="education.items[0].startMonth">
+                        <label class="">Slutdato &nbsp</label><select id="s3" class="form-select-custom" name="education.items[0].startMonth">
                             <option value="">Vis ikke</option>
                             <option value="hidden">Vis kun år</option>
                             <option value="1">januar</option>
@@ -151,7 +151,7 @@
                         </select><i class="form-select-custom--arrow"></i>
                     </div>
                     <div class="form-element col-2" name="position-education.items[0].startYear">
-                        <label class="">&nbsp;</label><select class="form-select-custom form__select-element"
+                        <label class="">&nbsp;</label><select id="s4" class="form-select-custom form__select-element"
                             name="education.items[0].startYear">
                             <option value="2030">2030</option>
                             <option value="2029">2029</option>
@@ -235,13 +235,13 @@
                     <div class="form__fields-group col-2">
                         <p></p>
                         <div class="input">
-                            <input placeholder="Uddanelsens navn" id="u-navn" type="text" class="input-field" />
+                            <input placeholder="Uddanelsens navn" id="u-navn2" type="text" class="input-field" />
                         </div>
                         <div class="input">
-                            <input placeholder="Uddanelsens sted" id="u-sted" type="text" class="input-field" />
+                            <input placeholder="Uddanelsens sted" id="u-sted2" type="text" class="input-field" />
                         </div>
                         <div class="form-element col-2" name="position-education.items[0].startMonth">                            
-                            <label class="">Startdato</label><select class="form-select-custom" name="education.items[0].startMonth">
+                            <label class="">Startdato</label><select id="d1" class="form-select-custom" name="education.items[0].startMonth">
                                 <option value="">Vis ikke</option>
                                 <option value="hidden">Vis kun år</option>
                                 <option value="1">januar</option>
@@ -259,7 +259,7 @@
                             </select><i class="form-select-custom--arrow"></i>
                         </div>
                         <div class="form-element col-2" name="position-education.items[0].startYear">
-                            <label class="">&nbsp;</label><select class="form-select-custom form__select-element"
+                            <label class="">&nbsp;</label><select id="d2" class="form-select-custom form__select-element"
                                 name="education.items[0].startYear">
                                 <option value="2030">2030</option>
                                 <option value="2029">2029</option>
@@ -337,7 +337,7 @@
                     </div>
                     <div class="form__fields-group col-2">
                         <div class="form-element col-2" name="position-education.items[0].startMonth">
-                            <label class="">Slutdato &nbsp</label><select class="form-select-custom" name="education.items[0].startMonth">
+                            <label class="">Slutdato &nbsp</label><select id="d3" class="form-select-custom" name="education.items[0].startMonth">
                                 <option value="">Vis ikke</option>
                                 <option value="hidden">Vis kun år</option>
                                 <option value="1">januar</option>
@@ -355,7 +355,7 @@
                             </select><i class="form-select-custom--arrow"></i>
                         </div>
                         <div class="form-element col-2" name="position-education.items[0].startYear">
-                            <label class="">&nbsp;</label><select class="form-select-custom form__select-element"
+                            <label class="">&nbsp;</label><select id="d4" class="form-select-custom form__select-element"
                                 name="education.items[0].startYear">
                                 <option value="2030">2030</option>
                                 <option value="2029">2029</option>
@@ -439,16 +439,16 @@
                     <div class="form__fields-group col-2">
                         <p></p>
                         <div class="input">
-                            <input placeholder="Uddanelsens navn" id="u-navn" type="text" class="input-field" />
+                            <input placeholder="Uddanelsens navn" id="u-navn3" type="text" class="input-field" />
                         </div>
                         <div class="input">
-                            <input placeholder="Uddanelsens sted" id="u-sted" type="text" class="input-field" />
+                            <input placeholder="Uddanelsens sted" id="u-sted3" type="text" class="input-field" />
                         </div>
                         <div class="form-element col-2" name="position-education.items[0].startMonth">
 
                             
                             
-                            <label class="">Startdato</label><select class="form-select-custom" name="education.items[0].startMonth">
+                            <label class="">Startdato</label><select id="g1" class="form-select-custom" name="education.items[0].startMonth">
                                 <option value="">Vis ikke</option>
                                 <option value="hidden">Vis kun år</option>
                                 <option value="1">januar</option>
@@ -466,7 +466,7 @@
                             </select><i class="form-select-custom--arrow"></i>
                         </div>
                         <div class="form-element col-2" name="position-education.items[0].startYear">
-                            <label class="">&nbsp;</label><select class="form-select-custom form__select-element"
+                            <label class="">&nbsp;</label><select id="g2" class="form-select-custom form__select-element"
                                 name="education.items[0].startYear">
                                 <option value="2030">2030</option>
                                 <option value="2029">2029</option>
@@ -544,7 +544,7 @@
                     </div>
                     <div class="form__fields-group col-2">
                         <div class="form-element col-2" name="position-education.items[0].startMonth">
-                            <label class="">Slutdato &nbsp</label><select class="form-select-custom" name="education.items[0].startMonth">
+                            <label class="">Slutdato &nbsp</label><select id="g3" class="form-select-custom" name="education.items[0].startMonth">
                                 <option value="">Vis ikke</option>
                                 <option value="hidden">Vis kun år</option>
                                 <option value="1">januar</option>
@@ -562,7 +562,7 @@
                             </select><i class="form-select-custom--arrow"></i>
                         </div>
                         <div class="form-element col-2" name="position-education.items[0].startYear">
-                            <label class="">&nbsp;</label><select class="form-select-custom form__select-element"
+                            <label class="">&nbsp;</label><select id="g4" class="form-select-custom form__select-element"
                                 name="education.items[0].startYear">
                                 <option value="2030">2030</option>
                                 <option value="2029">2029</option>
@@ -643,10 +643,11 @@
 
 
                 <!-- Tilføj Button -->
-                <button id="btn" class="btn"><i class="fa fa-plus"></i> Tilføj Nyt Job</button>
+                <button id="btn" class="btn" onclick="myFunction()"><i class="fa fa-plus"></i> Tilføj Nyt Job</button>
 
                 <!-- Videre Button -->
-                <a id="btn2" class="btn2" href="opret4.html" >Videre</a>
+                <a id="btn2" class="btn2" href="opret4.html" onclick="nextFunction()"> Videre</a>
+
 
 
             </form>
@@ -664,6 +665,69 @@
             }
         });
     
+    </script>
+
+    <script>
+        var add_counter = 0; 
+
+        function myFunction() {
+            add_counter += 1;
+
+        } 
+
+        function nextFunction() {
+
+            var s1 = document.getElementById("s1").value;
+            var s2 = document.getElementById("s2").value;
+            var s3 = document.getElementById("s3").value;
+            var s4 = document.getElementById("s4").value;
+            var udd_navn1 = document.getElementById("u-navn1").value;
+            var sted_navn1 = document.getElementById("u-sted1").value;
+
+            $.sessionStorage('udd_navn1', udd_navn1);
+            $.sessionStorage('sted_navn1', sted_navn1);
+            $.sessionStorage('s1', s1);
+            $.sessionStorage('s2', s2);
+            $.sessionStorage('s3', s3);
+            $.sessionStorage('s4', s4);
+            
+            var d1 = document.getElementById("d1").value;
+            var d2 = document.getElementById("d2").value;
+            var d3 = document.getElementById("d3").value;
+            var d4 = document.getElementById("d4").value;
+            var udd_navn2 = document.getElementById("u-navn2").value;
+            var sted_navn2 = document.getElementById("u-sted2").value;
+
+            if(udd_navn2.length > 0 && sted_navn2.length > 0) {
+                $.sessionStorage('udd_navn2', udd_navn2);
+                $.sessionStorage('sted_navn2', sted_navn2);
+                $.sessionStorage('d1', d1);
+                $.sessionStorage('d2', d2);
+                $.sessionStorage('d3', d3);
+                $.sessionStorage('d4', d4);
+            }
+            
+            var g1 = document.getElementById("g1").value;
+            var g2 = document.getElementById("g2").value;
+            var g3 = document.getElementById("g3").value;
+            var g4 = document.getElementById("g4").value;
+            var udd_navn3 = document.getElementById("u-navn3").value;
+            var sted_navn3 = document.getElementById("u-sted3").value;
+        
+            if(udd_navn3.length > 0 && sted_navn3.length > 0) {
+                $.sessionStorage('udd_navn3', udd_navn3);
+                $.sessionStorage('sted_navn3', sted_navn3);
+                $.sessionStorage('g1', g1);
+                $.sessionStorage('g2', g2);
+                $.sessionStorage('g3', g3);
+                $.sessionStorage('g4', g4);
+            }
+            
+
+
+        }
+           
+
     </script>
 
 

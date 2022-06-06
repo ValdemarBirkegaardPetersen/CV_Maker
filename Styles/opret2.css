@@ -304,7 +304,7 @@ input:focus::placeholder {
       text-align: center;
   }
 
-  #u-navn {
+  #u-navn1,#u-navn2,#u-navn3 {
       margin-top: 25px;
   }
 

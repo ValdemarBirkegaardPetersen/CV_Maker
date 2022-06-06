@@ -7,7 +7,8 @@
     <title>Kontaktoplysninger</title>
     <link rel="stylesheet" href="Styles/opret1.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Libraries/jquery.storage.js"></script>
 
 </head>
 
@@ -67,6 +68,14 @@
             console.log(adress);
             console.log(postal);
             console.log(by);
+
+            $.sessionStorage('navn', navn);
+            $.sessionStorage('mail', mail);
+            $.sessionStorage('phone', phone);
+            $.sessionStorage('adress', adress);
+            $.sessionStorage('postal', postal);
+            $.sessionStorage('by', by);
+
         }
 
         function demoFromHTML() {

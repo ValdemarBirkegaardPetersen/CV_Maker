@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resumeoplysninger</title>
     <link rel="stylesheet" href="Styles/opret1.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="Libraries/jquery.storage.js"></script>
 </head>
 
 <body>
@@ -24,20 +23,20 @@
             <form class="form" action="javascript:void(0);">
                 <div class="input">
                     <label class="input-label">Fortæl lidt om dig selv (maks 500 tegn)</label>
-                    <input id="name" type="text" class="name" maxlength="100"/>
+                    <input id="omdig" type="text" class="omdig" maxlength="100"/>
                 </div>
 
                 <div class="input">
                     <label class="input-label">Sprog</label>
-                    <input id="adress" type="adressse" class="input-field" />
+                    <input id="sprog" type="adressse" class="input-field" />
                 </div>
                 <div class="input">
                     <label class="input-label">Færdigheder</label>
-                    <input id="postal" type="postnummer" class="input-field" />
+                    <input id="færdigheder" type="postnummer" class="input-field" />
                 </div>
                 <div class="input">
                     <label class="input-label">Certifikater</label>
-                    <input id="demo" type="by" class="input-field" />
+                    <input id="certifikater" type="by" class="input-field" />
                 </div>
                 <div class="input">
                     <a id="input-submit" class="input-submit" href="opret3.html" onclick="myFunction()">Videre</a>
@@ -49,53 +48,22 @@
 
 
     <script>
-        $("#name").replaceWith('<textarea id="name" class="name" maxlength="500"></textarea>');
+        $("#omdig").replaceWith('<textarea id="omdig" class="name" maxlength="500"></textarea>');
     </script>
 
     <script>
-        $('#input-submit').click(function(ev) {
-            // do whatever you want here
-
-            var navn = document.getElementById("name").value;
-            var mail = document.getElementById("mail").value;
-            var phone = document.getElementById("phone").value;
-            var adress = document.getElementById("adress").value;
-            var postal = document.getElementById("postal").value;
-            var by = document.getElementById("demo").value;
-
-            console.log(navn);
-            console.log(mail);
-            console.log(phone);
-            console.log(adress);
-            console.log(postal);
-            console.log(by);
-
-            ev.preventDefault();
-            ev.stopPropagation();
-        });
-
         function myFunction() {
-            console.log(">Hello");
-            var navn = document.getElementById("name").value;
-            var mail = document.getElementById("mail").value;
-            var phone = document.getElementById("phone").value;
-            var adress = document.getElementById("adress").value;
-            var postal = document.getElementById("postal").value;
-            var by = document.getElementById("demo").value;
+            var omdig = document.getElementById("omdig").value;
+            var sprog = document.getElementById("sprog").value;
+            var færdigheder = document.getElementById("færdigheder").value;
+            var certifikater = document.getElementById("certifikater").value;
 
-            console.log(navn);
-            console.log(mail);
-            console.log(phone);
-            console.log(adress);
-            console.log(postal);
-            console.log(by);
+            $.sessionStorage('omdig', omdig);
+            $.sessionStorage('sprog', sprog);
+            $.sessionStorage('færdigheder', færdigheder);
+            $.sessionStorage('certifikater', certifikater);
         }
 
-        function demoFromHTML() {
-            console.log("Hello World");
-            var pdf = new jsPDF('p', 'pt', 'letter');
-            pdf.save("test.pdf");
-        }
     </script>
 
 </body>
