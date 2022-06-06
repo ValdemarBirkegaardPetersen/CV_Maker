@@ -178,63 +178,83 @@
     var adress = $.sessionStorage('adress');
     var postal = $.sessionStorage('postal');
     var by = $.sessionStorage('by');
+    //var alder = 
 
     // opret2.html
     var omdig = $.sessionStorage('omdig');
-    var sprog = $.sessionStorage('sprog'); // 
-    var færdigheder = $.sessionStorage('færdigheder'); // 
-    var certifikater = $.sessionStorage('certifikater'); // 
+    //var omdig = 'Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.';
+    var sprog = $.sessionStorage('sprog');
+    //var sprog = 'Dansk, Engelsk, Tysk';
+    var sprog = sprog.trim().split(/,\s*/);
+    var skills = $.sessionStorage('færdigheder');
+    //var skills = 'Photoshop, Premiere Pro, Excell, 3DS Max 2022';
+    //var skills = null;
+    if(skills != null){skills = skills.trim().split(/,\s*/);} 
+    var certs = $.sessionStorage('certifikater'); 
+    //var certs = 'Certified Business Relationshop Manager (CBRM), NAND Benifits Account Manager Certification (RAMC)'; 
+    if(certs != null){certs = certs.trim().split(/,\s*/);}
 
     // opret3.html
-    var udd_navn1 = $.sessionStorage('udd_navn1');
-    var udd_navn2 = $.sessionStorage('udd_navn2');
-    var udd_navn3 = $.sessionStorage('udd_navn3');
+    //var udd_navn1 = 'test';
     
-    var udd_sted_navn1 = $.sessionStorage('sted_navn1');
-    var udd_sted_navn2 = $.sessionStorage('sted_navn2');
-    var udd_sted_navn3 = $.sessionStorage('sted_navn3');
+
+    var eduName1 = $.sessionStorage('udd_navn1');
+    var eduLoc1 = $.sessionStorage('sted_navn1');
+    var eduStartMonth1  = $.sessionStorage('s1');
+    var eduStart1 = $.sessionStorage('s2');
+    var eduEndMonth1 = $.sessionStorage('s3');
+    var eduEnd1 = $.sessionStorage('s4');
+
+    var eduName2 = $.sessionStorage('udd_navn2');
+    var eduLoc2 = $.sessionStorage('sted_navn2');
+    var eduStartMonth2  = $.sessionStorage('d1');
+    var eduStart2 = $.sessionStorage('d2');
+    var eduEndMonth2 = $.sessionStorage('d3');
+    var eduEnd2 = $.sessionStorage('d4');
+
+    var eduName3 = $.sessionStorage('udd_navn3');
+    var eduLoc3 = $.sessionStorage('sted_navn3');
+    var eduStartMonth3  = $.sessionStorage('g1');
+    var eduStart3 = $.sessionStorage('g2');
+    var eduEndMonth3 = $.sessionStorage('g3');
+    var eduEnd3 = $.sessionStorage('g4');
+    
 
 
+    //var workStart1 = 
+    //var workStartMonth1 =
+    //var workEnd1 = 
+    //var workEndMonth1 = 
+    //var workName1 =
+    //var workLoc1 = 
+    //var workDesc1 = 
 
-    var udd_start_month1  = $.sessionStorage('s1');
-    var udd_start_year1 = $.sessionStorage('s2');
-    var udd_end_month1 = $.sessionStorage('s3');
-    var udd_end_year1 = $.sessionStorage('s4');
+    //var workStart2 =
+    //var workStartMonth2 =
+    //var workEnd2 =
+    //var workEndMonth2 =
+    //var workName2 = 
+    //var workLoc2 = 
+    //var workDesc2 = 
 
-    var udd_start_month2  = $.sessionStorage('d1');
-    var udd_start_year2 = $.sessionStorage('d2');
-    var udd_end_month2 = $.sessionStorage('d3');
-    var udd_end_year2 = $.sessionStorage('d4');
-
-    var udd_start_month3  = $.sessionStorage('g1');
-    var udd_start_year3 = $.sessionStorage('g2');
-    var udd_end_month3 = $.sessionStorage('g3');
-    var udd_end_year3 = $.sessionStorage('g4');
+    //var workStart3 = 
+    //var workStartMonth3 = 
+    //var workEnd3 = 
+    //var workEndMonth3 = 
+    //var workName3 = 
+    //var workLoc3 = 
+    //var workDesc3 = 
+        
+        
 
     var rgbColor = hslToRgb(0, 0.5, 0.3);
     var rgbColor2 = hslToRgb(0, 0.25, 0.9);
+    var rgbColor3 = hslToRgb(0, 0.9, 0.5);
     var croppedImgBase64 = $.sessionStorage('croppedImgBase64'); // Getting image from cache/storage
     $("#base64image").attr("src", croppedImgBase64); // Setting base64 as <img> source
 
     function myFunction() {
-        //console.log("pdf test 1");
-        /*
-        var navn = document.getElementById("name").value;
-        var mail = document.getElementById("mail").value;
-        var phone = document.getElementById("phone").value;
-        var adress = document.getElementById("adress").value;
-        var postal = document.getElementById("postal").value;
-        var by = document.getElementById("demo").value;
-
-        console.log(navn);
-        console.log(mail);
-        console.log(phone);
-        console.log(adress);
-        console.log(postal);
-        console.log(by);
-        
-        demoFromHTML(1, 2, 3, 4, 5, 6);
-        */
+        //?
     }
     
 
@@ -252,6 +272,8 @@
         doc.setTextColor(40,40,40);
 
         //Om mig
+
+        /*
         var sectionHeight = 50;
         doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.setFontSize(16);
@@ -259,12 +281,15 @@
         sectionHeight += 3;
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.rect(10, sectionHeight, 120, 0.5, 'F')
-        sectionHeight += 7;
+        sectionHeight += 10;
+        */
+
+        var sectionHeight = 50;
 
         doc.setTextColor(40,40,40);
         doc.setFontSize(12);
         doc.setFontStyle('normal');
-        var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 120);
+        var splitTitle = doc.splitTextToSize(omdig, 120);
         doc.text(10, sectionHeight, splitTitle);
         sectionHeight += 5+(5*splitTitle.length);
 
@@ -275,7 +300,7 @@
         sectionHeight += 3;
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.rect(10, sectionHeight, 120, 0.5, 'F')
-        sectionHeight += 7;
+        sectionHeight += 10;
 
         doc.setTextColor(40,40,40);
         doc.setFontSize(13);
@@ -283,54 +308,73 @@
         //var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 125);
         //doc.text(10, sectionHeight, splitTitle);
         //sectionHeight += 5+(5*splitTitle.length);
-        var eduStart1 = '2010';
-        var eduEnd1 = '2013';
-        var eduName1 = 'Uddannelsesnavn1'
-        var eduLoc1 = 'Lokation1'
         
         if(eduName1 != null){
             doc.setFontSize(11);
             doc.setFontStyle('bold');
-            doc.text(10, sectionHeight, eduStart1+'-');
-            doc.text(10, sectionHeight+5, eduEnd1);
+
+            if(eduStartMonth1 != null){
+                doc.text(10, sectionHeight, eduStart1+'-'+eduStartMonth1+'-');
+            }else{
+                doc.text(10, sectionHeight, eduStart1+'-');
+            }
+
+            if(eduEndMonth1 != null){
+                doc.text(10, sectionHeight+5, eduEnd1+'-'+eduEndMonth1);
+            }else{
+                doc.text(10, sectionHeight+5, eduEnd1);
+            }
+
             doc.setFontSize(13);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(eduName1+' - '+eduLoc1, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(eduName1+' - '+eduLoc1, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 8+(5*splitTitle.length);
         }
-
-        var eduStart2 = '2013';
-        var eduEnd2 = '2016';
-        var eduName2 = 'Uddannelsesnavn2';
-        var eduLoc2 = 'Lokation2';
         
         if(eduName2 != null){
             doc.setFontSize(11);
             doc.setFontStyle('bold');
-            doc.text(10, sectionHeight, eduStart2+'-');
-            doc.text(10, sectionHeight+5, eduEnd2);
+
+            if(eduStartMonth2 != null){
+                doc.text(10, sectionHeight, eduStart2+'-'+eduStartMonth2+'-');
+            }else{
+                doc.text(10, sectionHeight, eduStart2+'-');
+            }
+
+            if(eduEndMonth2 != null){
+                doc.text(10, sectionHeight+5, eduEnd2+'-'+eduEndMonth2);
+            }else{
+                doc.text(10, sectionHeight+5, eduEnd2);
+            }
+
             doc.setFontSize(13);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(eduName2+' - '+eduLoc2, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(eduName2+' - '+eduLoc2, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 8+(5*splitTitle.length);
         }
-
-        var eduStart3 = '2016';
-        var eduEnd3 = '2018';
-        var eduName3 = 'Uddannelsesnavn3';
-        var eduLoc3 = 'Lokation3';
         
         if(eduName3 != null){
             doc.setFontSize(11);
             doc.setFontStyle('bold');
-            doc.text(10, sectionHeight, eduStart3+'-');
-            doc.text(10, sectionHeight+5, eduEnd3);
+
+            if(eduStartMonth3 != null){
+                doc.text(10, sectionHeight, eduStart3+'-'+eduStartMonth3+'-');
+            }else{
+                doc.text(10, sectionHeight, eduStart3+'-');
+            }
+
+            if(eduEndMonth3 != null){
+                doc.text(10, sectionHeight+5, eduEnd3+'-'+eduEndMonth3);
+            }else{
+                doc.text(10, sectionHeight+5, eduEnd3);
+            }
+
             doc.setFontSize(13);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(eduName3+' - '+eduLoc3, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(eduName3+' - '+eduLoc3, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 8+(5*splitTitle.length);
         }
 
@@ -343,84 +387,103 @@
         sectionHeight += 3;
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.rect(10, sectionHeight, 120, 0.5, 'F')
-        sectionHeight += 7;
+        sectionHeight += 10;
 
         doc.setTextColor(40,40,40);
         doc.setFontSize(13);
         doc.setFontStyle('normal');
+
         //var splitTitle = doc.splitTextToSize('Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.', 125);
         //doc.text(10, sectionHeight, splitTitle);
         //sectionHeight += 5+(5*splitTitle.length);
-        var workStart1 = '2010';
-        var workEnd1 = '2013';
-        var workName1 = 'Arbejdstitel1'
-        var workLoc1 = 'Arbejdssted1'
-        var workDesc1 = 'Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio'
-        
+
         if(workName1 != null){
             doc.setFontSize(11);
             doc.setFontStyle('bold');
-            doc.text(10, sectionHeight, workStart1+'-');
-            doc.text(10, sectionHeight+5, workEnd1);
+
+            if(workStartMonth1 != null){
+                doc.text(10, sectionHeight, workStart1+'-'+workStartMonth1+'-');
+            }else{
+                doc.text(10, sectionHeight, workStart1+'-');
+            }
+
+            if(workEndMonth1 != null){
+                doc.text(10, sectionHeight+5, workEnd1+'-'+workEndMonth1);
+            }else{
+                doc.text(10, sectionHeight+5, workEnd1);
+            }
+
+            //doc.text(10, sectionHeight, workStart1+'-');
+            //doc.text(10, sectionHeight+5, workEnd1);
             doc.setFontSize(13);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(workName1+' - '+workLoc1, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(workName1+' - '+workLoc1, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 1+(5*splitTitle.length);
 
             doc.setFontSize(11);
-            var splitTitle = doc.splitTextToSize(workDesc1, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(workDesc1, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 4*splitTitle.length;
             sectionHeight += 5;
             doc.setFontSize(13);
         }
 
-        var workStart2 = '2013';
-        var workEnd2 = '2016';
-        var workName2 = 'Arbejdstitel2';
-        var workLoc2 = 'Arbejdssted2';
-        var workDesc2 = 'Finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.';
-        
         if(workName2 != null){
             doc.setFontSize(11);
             doc.setFontStyle('bold');
-            doc.text(10, sectionHeight, workStart2+'-');
-            doc.text(10, sectionHeight+5, workEnd2);
+
+            if(workStartMonth2 != null){
+                doc.text(10, sectionHeight, workStart2+'-'+workStartMonth2+'-');
+            }else{
+                doc.text(10, sectionHeight, workStart2+'-');
+            }
+
+            if(workEndMonth2 != null){
+                doc.text(10, sectionHeight+5, workEnd2+'-'+workEndMonth2);
+            }else{
+                doc.text(10, sectionHeight+5, workEnd2);
+            }
+
             doc.setFontSize(13);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(workName2+' - '+workLoc2, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(workName2+' - '+workLoc2, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 1+(5*splitTitle.length);
 
             doc.setFontSize(11);
-            var splitTitle = doc.splitTextToSize(workDesc2, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(workDesc2, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 4*splitTitle.length;
             sectionHeight += 5;
             doc.setFontSize(13);
         }
 
-        var workStart3 = '2016';
-        var workEnd3 = '2018';
-        var workName3 = 'Arbejdstitel3';
-        var workLoc3 = 'Arbejdssted3';
-        var workDesc3 = 'Porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit. Phasellus gravida - finibus felis vitae sagittis. Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum gravida - nulla sit amet odio';
-        
         if(workName3 != null){
             doc.setFontSize(11);
             doc.setFontStyle('bold');
-            doc.text(10, sectionHeight, workStart3+'-');
-            doc.text(10, sectionHeight+5, workEnd3);
+
+            if(workStartMonth3 != null){
+                doc.text(10, sectionHeight, workStart3+'-'+workStartMonth3+'-');
+            }else{
+                doc.text(10, sectionHeight, workStart3+'-');
+            }
+
+            if(workEndMonth3 != null){
+                doc.text(10, sectionHeight+5, workEnd3+'-'+workEndMonth3);
+            }else{
+                doc.text(10, sectionHeight+5, workEnd3);
+            }
+
             doc.setFontSize(13);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(workName3+' - '+workLoc3, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(workName3+' - '+workLoc3, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 1+(5*splitTitle.length);
 
             doc.setFontSize(11);
-            var splitTitle = doc.splitTextToSize(workDesc3, 105);
-            doc.text(25, sectionHeight, splitTitle);
+            var splitTitle = doc.splitTextToSize(workDesc3, 100);
+            doc.text(30, sectionHeight, splitTitle);
             sectionHeight += 4*splitTitle.length;
             sectionHeight += 5;
             doc.setFontSize(13);
@@ -429,7 +492,6 @@
         sectionHeight += 2;
 
         //Færdigheder
-        var skills = 'Færdighed1, Færdighed2, Færdighed3 & Færdighed4';
         if(skills != null){ //if certificates is not empty(null)
             doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
             doc.setFontSize(16);
@@ -437,32 +499,50 @@
             sectionHeight += 3;
             doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
             doc.rect(10, sectionHeight, 120, 0.5, 'F')
-            sectionHeight += 7;
+            sectionHeight += 10;
 
             doc.setTextColor(40,40,40);
             doc.setFontSize(12);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(skills, 120);
-            doc.text(10, sectionHeight, splitTitle);
-            sectionHeight += 5+(5*splitTitle.length);
+            //var splitTitle = doc.splitTextToSize(skills, 120);
+            //doc.text(10, sectionHeight, splitTitle);
+
+            for(var i = 0; i < skills.length; i++) {
+                doc.text(18, sectionHeight, skills[i]);
+                doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
+                doc.ellipse(13, sectionHeight-1.5, 1.5, 1.5, 'F')
+                sectionHeight += 10;
+            }
+
+            //sectionHeight += 5+(5*splitTitle.length);
+            sectionHeight += 5;
         }
         //Certifikater
-        var certificates = 'Certifikat1 & Certifikat2';
-        if(certificates != null){ //if certificates is not empty(null)
+        if(certs != null){ //if certificates is not empty(null)
             doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
             doc.setFontSize(16);
             doc.text(10,sectionHeight,'Certifikater');
             sectionHeight += 3;
             doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
             doc.rect(10, sectionHeight, 120, 0.5, 'F')
-            sectionHeight += 7;
+            sectionHeight += 10;
 
             doc.setTextColor(40,40,40);
             doc.setFontSize(12);
             doc.setFontStyle('normal');
-            var splitTitle = doc.splitTextToSize(certificates, 120);
-            doc.text(10, sectionHeight, splitTitle);
-            sectionHeight += 5+(5*splitTitle.length);
+            //var splitTitle = doc.splitTextToSize(certs, 120);
+
+            
+            for(var i = 0; i < certs.length; i++) {
+                doc.text(18, sectionHeight, certs[i]);
+                doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
+                doc.ellipse(13, sectionHeight-1.5, 1.5, 1.5, 'F')
+                sectionHeight += 10;
+            }
+
+            //doc.text(10, sectionHeight, splitTitle);
+            //sectionHeight += 5+(5*splitTitle.length);
+            sectionHeight += 5;
         }
         //draw right bracket
         doc.setFillColor(rgbColor2[0],rgbColor2[1],rgbColor2[2]);
@@ -487,34 +567,58 @@
         doc.text(147,230,'Sprog');
         doc.setFontSize(14);
         doc.setFontStyle('normal');
-        doc.text(147,138,'12 34 56 78');
-        doc.text(147,158,'navn@template.com');
-        doc.text(147,178,'N/A');
-        doc.text(147,198,'Gadenavn 01');
-        doc.text(147,218,'0000'+' '+'Bynavn');
-        var splitTitle = doc.splitTextToSize('sprog1, sprog2, sprog3, sprog4, sprog5 & sprog6',60);
-        doc.text(147, 238, splitTitle);
+        doc.text(147,138, phone);
+        doc.text(147,158, mail);
+        doc.text(147,178, alder);
+        doc.text(147,198, adress);
+        doc.text(147,218, postal+' '+by);
+
+        var infoHeight = 240;
+        for(var i = 0; i < sprog.length; i++) {
+                doc.text(155, infoHeight, sprog[i]);
+                doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
+                doc.ellipse(150, infoHeight-1.5, 1.5, 1.5, 'F')
+                infoHeight += 10;
+            }
+
+        //var splitTitle = doc.splitTextToSize(sprog,60);
+        //doc.text(147, 238, splitTitle);
 
 
         //add image - added image is commented out for debugging it is not loaded in the instance
-        doc.setFillColor(0,0,0);
+        doc.setFillColor(rgbColor3[0],rgbColor3[1],rgbColor3[2]);
         doc.rect(145, 45, 60, 60, 'F') //black box where image should load
         //doc.addImage(croppedImgBase64, 'PNG', 145, 45, 60, 60);
 
     
 
         //draw header
-        var fullName = 'Fornavn Mellemnavn Efternavn';
-        var jobTitle = 'Job Titel';
+
         doc.setFillColor(rgbColor[0],rgbColor[1],rgbColor[2]);
         doc.rect(0, 0, docWidth, 40, 'F')
         doc.setTextColor(255,255,255);
         doc.setFontSize(36);
-        doc.text(5,25,fullName);
+        doc.text(5,25,navn);
+        
         doc.setFontSize(22);
+        var jobTitle = ' ';
+
+        if(eduName3 != null){jobTitle = eduName3}
+        if(eduName2 != null){jobTitle = eduName2}
+        if(eduName1 != null){jobTitle = eduName1}
+
+        if(workName3 != null){jobTitle = workName3}
+        if(workName2 != null){jobTitle = workName2}
+        if(workName1 != null){jobTitle = workName1}
+        
         doc.text(5,35,jobTitle);
 
 
+        //doc.setTextColor(185,185,185);
+        doc.setTextColor(185,185,185);
+        doc.setFontSize(12);    
+        doc.text(docWidth-68,docHeight-8,'Made with CV Maker')
+        doc.text(docWidth-68,docHeight-2,'By V. Birkegaard & S. Olsson')
 
         doc.save(fullName+" CV.pdf"); //saves as pdf from the browser
     }   
@@ -527,6 +631,7 @@
         //console.log(document.getElementById('rangeHue').value/360, 70/100, 70/100);
         rgbColor = hslToRgb(hue/360, 0.5, 0.3);
         rgbColor2 = hslToRgb(hue/360, 0.25, 0.9);
+        rgbColor3 = hslToRgb(hue/360, 0.9, 0.5);
         //console.log('red: ' + rgbColor[0]);
         //console.log('green: ' + rgbColor[1]);
         //console.log('blue: ' + rgbColor[2]);
