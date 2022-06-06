@@ -326,9 +326,9 @@
     }
     var workStart3 = $.sessionStorage('n2');
 
-    var workStartMonth3 = $.sessionStorage('n3');
-    if(parseInt(workStartMonth3) < 10) {
-        workStartMonth3 = "0" + workStartMonth3
+    var workEndMonth3 = $.sessionStorage('n3');
+    if(parseInt(workEndMonth3) < 10) {
+        workEndMonth3 = "0" + workStartMonth3
     }
     var workEnd3 = $.sessionStorage('n4');
 
@@ -607,7 +607,7 @@
         sectionHeight += 2;
 
         //Færdigheder
-        if(skills != ['']){ //if certificates is not empty(null)
+        if(skills != ''){ //if certificates is not empty(null)
             doc.setTextColor(rgbColor[0],rgbColor[1],rgbColor[2]);
             doc.setFontSize(16);
             doc.text(10,sectionHeight,'Færdigheder');
